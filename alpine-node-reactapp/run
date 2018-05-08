@@ -1,4 +1,4 @@
 docker run -d -p 91:80 \
-	-e "REACT_APP_API_LINK=https://ghn-caresoft-crm-be.gpvcloud.com/api" \
-	-e "REACT_APP_ID=local-caresoft" \
- 	ghn-dockerregistry.gpvcloud.com/ghn-mpire/caresoft-crm-fe:1.0.4
+	-e "REACT_APP_API_LINK=[api-link]]" \
+	-e "REACT_APP_ID=app-id" \
+ 	nbtri/alpine-node-reactapp

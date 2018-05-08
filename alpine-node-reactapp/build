@@ -1,1 +1,13 @@
-docker build . --squash -t ghn-dockerregistry.gpvcloud.com/ghn-mpire/caresoft-crm-fe:1.0.4
+#!/bin/sh
+
+TAG="latest"
+TIMEZONE="Asia/Ho_Chi_Minh"
+
+# build
+docker build --build-arg timezone=$TIMEZONE -t nbtri/alpine-node-reactapp:$TAG .
+echo "\n-> Build success\n"
+
+# image push
+if [ "$#" -ne 0 ] && [ "$1" = "push" ]; then
+	docker push nbtri/alpine-node-reactapp:$TAG
+fi

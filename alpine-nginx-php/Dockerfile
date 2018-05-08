@@ -67,6 +67,8 @@ COPY nginx-sites.conf /etc/nginx/sites-enabled/default
 COPY php-fpm.conf /etc/php7/php-fpm.d/www.conf
 COPY start /root/start
 
+RUN ["chmod", "+x", "/root/start"]
+
 # expose
 EXPOSE 80
 

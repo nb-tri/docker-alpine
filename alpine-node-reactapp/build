@@ -1,0 +1,1 @@
+docker build . --squash -t ghn-dockerregistry.gpvcloud.com/ghn-mpire/caresoft-crm-fe:1.0.4

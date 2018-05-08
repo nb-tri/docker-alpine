@@ -1,0 +1,12 @@
+#!/bin/sh
+
+TAG="latest"
+
+# build
+docker build -t nbtri/alpine-phalcon:$TAG .
+echo "\n-> Build success\n"
+
+# image push
+if [ "$#" -ne 0 ] && [ "$1" = "push" ]; then
+	docker push nbtri/alpine-phalcon:$TAG
+fi

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+TAG="latest"
+TIMEZONE="Asia/Ho_Chi_Minh"
+
+# build
+docker build --build-arg timezone=$TIMEZONE -t nbtri/alpine-nginx-php:$TAG .
+echo "\n-> Build success\n"
+
+# image push
+if [ "$#" -ne 0 ] && [ "$1" = "push" ]; then
+	docker push nbtri/alpine-nginx-php:$TAG
+fi
